@@ -1,0 +1,8 @@
+[{<<"mochiweb">>,
+  {git,"https://github.com/mochi/mochiweb.git",
+       {ref,"611254eb941e502227f221667389b98fd8e72d6f"}},
+  0},
+ {<<"mochiweb_xpath">>,
+  {git,"https://github.com/retnuh/mochiweb_xpath.git",
+       {ref,"8cd9ede33a9f2a35d02ad765017c6b86e9e56093"}},
+  0}].

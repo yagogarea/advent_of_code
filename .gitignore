@@ -1,0 +1,7 @@
+_build/
+_checkouts/
+_gen/
+*.dump
+*.crashdump
+priv/
+/apps/aoc_*/aoc_*/test

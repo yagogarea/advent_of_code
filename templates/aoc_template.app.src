@@ -1,0 +1,7 @@
+{application, aoc_template, [
+    {description, "An OTP application to solve %year day %day puzzles"},
+    {vsn, "0.0.1"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []}
+]}.

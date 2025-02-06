@@ -1,0 +1,9 @@
+{application, aoc_manager, [
+    {description, "An OTP application"},
+    {vsn, "0.0.1"},
+    {registered, []},
+    {applications, [kernel, stdlib, inets]},
+    {env, [
+        {url, "https://adventofcode.com/"}
+    ]}
+]}.
