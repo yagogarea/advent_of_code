@@ -1,0 +1,7 @@
+{application, aoc_2024_day11, [
+    {description, "An OTP application to solve 2024 day 11 puzzles"},
+    {vsn, "0.0.1"},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []}
+]}.
