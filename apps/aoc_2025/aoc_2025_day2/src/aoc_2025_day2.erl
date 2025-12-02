@@ -107,28 +107,15 @@ is_invalid_id2(String) ->
 is_invalid_id2(_String, Len, Len) ->
     false;
 is_invalid_id2(String, Len, Divisor) ->
-    Parts = [H | _T] = split_in_same_length(String, Divisor),
-    case lists:filter(fun (X) -> X == H end, Parts) of
-        [error] ->
-            is_invalid_id2(String, Len, Divisor + 1);
-        Parts ->
-            true;
-        _ ->
-            is_invalid_id2(String, Len, Divisor + 1)
-    end.
-
-split_in_same_length(String, Divisor) ->
-    split_in_same_length(String, Divisor, 0, []).
-
-split_in_same_length("", _Divisor, _Pos, Acc) ->
-    Acc;
-split_in_same_length(String, Divisor, Pos, Acc) ->
-    Len = string:len(String),
-    case Len < Divisor of
-        true ->
-            [error];
-        false ->
-            Part = string:slice(String, Pos, Divisor),
-            Rest = string:sub_string(String, 1 + Pos + Divisor),
-            split_in_same_length(Rest, Divisor, Pos, [Part | Acc])
+    case aoc_utils_strings:split_in_same_length(String, Divisor) of
+      error ->
+        is_invalid_id2(String, Len, Divisor + 1);
+    Parts ->
+        [H | _T] = Parts,
+        case lists:filter(fun (X) -> X == H end, Parts) of
+            Parts ->
+                true;
+            _ ->
+                is_invalid_id2(String, Len, Divisor + 1)
+        end
     end.
